@@ -1,0 +1,47 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="name" formControlName="name" />
+      <mat-error *ngIf="name.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ex. abc@emai.com"
+      />
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field style="height: 300px; width: 300px" appearance="fill">
+      <mat-label>Message: </mat-label>
+      <textarea
+        maxLength="120"
+        matInput
+        rows="8"
+        cols="40"
+        placeholder="Your message here (Max 120 characters)"
+        formControlName="message"
+      ></textarea>
+      <mat-error *ngIf="message.hasError('required')">
+        Message is <strong>required</strong>
+      </mat-error>
+      <mat-hint align="end">{{ message.value.length }} / 120</mat-hint>
+    </mat-form-field>
+  </div>
+</form>
