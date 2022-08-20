@@ -8,11 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormsComponent implements OnInit {
   myForm: FormGroup;
+  namePattern: string = "[a-zA-Z ]*";
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.pattern(this.namePattern)]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.maxLength(120)]],
     });

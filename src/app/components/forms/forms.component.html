@@ -6,6 +6,9 @@
       <mat-error *ngIf="name.hasError('required')">
         Name is <strong>required</strong>
       </mat-error>
+      <mat-error *ngIf="name.hasError('pattern')">
+        Alphabetical characters only
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
