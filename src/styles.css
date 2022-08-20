@@ -6,11 +6,11 @@ body {
 }
 
 .container {
-  background-color: rgb(189, 189, 189);
+  background-color: rgb(211, 211, 211);
   max-width: 100vh;
   margin: 30px auto;
   overflow: auto;
-  min-height: 100vh;
+  min-height: 80vh;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
